@@ -1,0 +1,82 @@
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0d6efd;
+    border-radius: 50%;
+    animation-name: girarSpinner;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes girarSpinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.caja-animada {
+    display: inline-block;
+    animation-name: cambiarColorTamano;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cambiarColorTamano {
+    0% {
+        background-color: #0d6efd;
+        transform: scale(1);
+    }
+
+    50% {
+        background-color: #dc3545;
+        transform: scale(1.1);
+    }
+
+    100% {
+        background-color: #0d6efd;
+        transform: scale(1);
+    }
+}
+
+
+.caja {
+    transition: transform 0.5s ease;
+}
+
+.caja-rotar:hover {
+    transform: rotate(10deg);
+}
+
+.caja-escalar:hover {
+    transform: scale(1.1);
+}
+
+.caja-trasladar:hover {
+    transform: translateY(-10px);
+}
+
+
+.contenedor-3d {
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.imagen-3d {
+    width: 250px;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.contenedor-3d:hover .imagen-3d {
+    transform: rotateX(20deg) rotateY(25deg);
+}
